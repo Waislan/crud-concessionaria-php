@@ -3,8 +3,8 @@
     $senha = '';
 
     try {
-        // deletar o :3301 caso o mysql use a porta padrão
-        $db = new PDO('mysql:host=localhost:3301;dbname=concessionaria-db', $usuario, $senha);
+        // exclua ":3308" se o seu MySQL usa a porta padrão (3306)
+        $db = new PDO('mysql:host=localhost:3308;dbname=concessionaria-db', $usuario, $senha);
     } catch (PDOException $e){
         print 'Error!: ' . $e->getMessage() . '<br/>';
     }

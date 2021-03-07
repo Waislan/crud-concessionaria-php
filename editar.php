@@ -1,40 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concessionária - Gerenciamento de Veículos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <?php
+    include('components/header.php');
+    ?>
+
     <script src="https://unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
     <script src="js/editar.js"></script>
 </head>
+
 <body>
     <div class="container my-3 ">
         <div class="jumbotron mb-3">
             <h1>Logo da Concessionária</h1>
         </div>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="listagem.html">Listagem</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="cadastro.html">Cadastro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sobre.html">Sobre</a>
-                  </li>
-              </ul>
-            </div>
-          </nav>
+        <?php
+        include('components/navbar.php');
+        ?>
 
         <form id="formVeiculo" method="POST" class="row">
             <div class="form-group col-md-6">
@@ -96,6 +80,7 @@
             <p>&copy; Instituto Federal do Sul de Minas Gerais – IFSULDEMINAS | Campus Poços de Caldas, MG.</p>
         </footer>
     </div>
-    
+
 </body>
+
 </html>
