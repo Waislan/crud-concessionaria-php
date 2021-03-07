@@ -7,6 +7,7 @@ VMasker(inputAno).maskPattern('9999');
 VMasker(inputPreco).maskMoney();
 
 // quando o formulário for submetido
+/*
 form.addEventListener('submit', () => {
     event.preventDefault(); // bloqueia o recarregamento
     const inputMarca = form.querySelector('#marca');
@@ -33,11 +34,11 @@ form.addEventListener('submit', () => {
         form.reset();
     }
 });
+*/
 
-function validarCampos(...campos)
-{
+function validarCampos(...campos) {
     let status = true;
-    const corrigeNumero = function(valor) {
+    const corrigeNumero = function (valor) {
         return Number(valor.replaceAll('.', '').replaceAll(',', '.'));
     }
 
