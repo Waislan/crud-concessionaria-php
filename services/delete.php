@@ -9,12 +9,12 @@ $modelo = $_POST['modelo'];
 $preco = $_POST['preco'];
 $cor = $_POST['cor'];
 
-$query = "DELETE FROM veiculos WHERE modelo=$modelo AND marca=$marca AND preco=$preco AND cor=$cor";
+$query = "DELETE FROM veiculos WHERE modelo='" . $modelo . "' AND marca='" . $marca . "' AND preco='" . $preco . "' AND cor='" . $cor . "'";
 
 try {
     $statement = $db->prepare($query);
-    $statement->execute();
-    $_SESSION['success'] = true;
+    $result = $statement->execute();
+    $_SESSION['success'] = $result;
     echo 'success';
 
 } catch (Exception $e) {
