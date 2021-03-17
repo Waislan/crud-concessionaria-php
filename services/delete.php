@@ -11,17 +11,21 @@ $cor = $_POST['cor'];
 
 $query = "DELETE FROM veiculos WHERE modelo='" . $modelo . "' AND marca='" . $marca . "' AND preco='" . $preco . "' AND cor='" . $cor . "'";
 
-try {
-    $statement = $db->prepare($query);
-    $result = $statement->execute();
-    $_SESSION['success'] = $result;
-    echo 'success';
+$_SESSION['del_valid'] = true;
 
-} catch (Exception $e) {
-    echo 'Exception -> ' . $e->getMessage();
-    //var_dump($e->getMessage());
-    $_SESSION['success'] = false;
+if($_SESSION['del_valid'] == true) {
+    try {
+        $statement = $db->prepare($query);
+        $result = $statement->execute();
+        $_SESSION['success'] = $result;
+        echo 'success';
+    
+    } catch (Exception $e) {
+        echo 'Exception -> ' . $e->getMessage();
+        //var_dump($e->getMessage());
+        $_SESSION['success'] = false;
+    }
+    echo 'not';
+    $db = null;
 }
-echo 'not';
-$db = null;
 header('Location: ../listagem.php');
