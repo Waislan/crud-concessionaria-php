@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (isset($_SESSION['valid_edit'])) {
+    if ($_SESSION['valid_edit'] === false) {
+        echo "<script>alert('Formulário Inválido!');</script>";
+    }
+    unset($_SESSION['valid_edit']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
