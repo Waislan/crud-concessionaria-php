@@ -9,6 +9,13 @@ if (isset($_SESSION['success'])) {
     }
     unset($_SESSION['success']);
 }
+
+if (isset($_SESSION['valid'])) {
+    if ($_SESSION['valid'] === false) {
+        echo "<script>alert('Formulário Inválido!');</script>";
+    }
+    unset($_SESSION['valid']);
+}
 ?>
 
 <!DOCTYPE html>
